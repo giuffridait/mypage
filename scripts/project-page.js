@@ -16,6 +16,21 @@ export async function renderProjectPage(projectId) {
   document.getElementById("project-title").textContent = project.title;
 
   const detail = document.getElementById("project-detail");
+  const demoSection = project.demoLink
+    ? project.demoLink === "TBD"
+      ? `
+    <div class="detail-section">
+      <h3>Availability</h3>
+      <p>TBD</p>
+    </div>
+  `
+      : `
+    <div class="detail-section">
+      <h3>Demo / Link</h3>
+      <a href="${project.demoLink}" target="_blank" rel="noreferrer">${project.demoLink}</a>
+    </div>
+  `
+    : "";
   detail.innerHTML = `
     <div class="detail-section">
       <h3>Problem</h3>
@@ -41,10 +56,7 @@ export async function renderProjectPage(projectId) {
       <h3>Next steps</h3>
       <p>${project.nextSteps}</p>
     </div>
-    <div class="detail-section">
-      <h3>Demo / Link</h3>
-      <a href="${project.demoLink}" target="_blank" rel="noreferrer">${project.demoLink}</a>
-    </div>
+    ${demoSection}
   `;
 
 }

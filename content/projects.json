@@ -19,15 +19,15 @@
       "id": "motherload-companion",
       "title": "Mother Load Agent",
       "status": "MVP",
-      "tags": ["Agentic", "Wellbeing", "Reflection"],
-      "oneLineProblem": "Language for the invisible load, without prescribing care.",
-      "problem": "Many mothers in the first year postpartum feel overwhelmed or depleted despite doing everything right. Existing tools focus on optimizing the baby or diagnosing mental health issues, but do not help mothers name the invisible emotional and cognitive load they are carrying. This leads to self-blame, decision fatigue, overconsumption of conflicting advice, and delayed support-seeking.",
-      "targetUser": "Mothers with babies aged 0–12 months, often first-time, with high self-expectations and limited local support who are comfortable reading short reflective prompts.",
-      "solution": "A guided reflection flow with 6–8 open-ended prompts that classifies a primary and secondary invisible load, then returns a validating, non-prescriptive insight with optional micro-steps and clear scope disclaimers.",
-      "architecture": "Agentic pipeline with Intake, Classifier, Writer, and Guardrail nodes. Intake checks for enough context; Classifier outputs primary/secondary load plus evidence; Writer drafts a calm insight; Guardrail enforces safety language and scope boundaries.",
-      "decisions": "Split classification and writing to reduce tone drift and make safety checks explicit; avoid diagnosis language and medical claims; keep usage anonymous with no logins to minimize data risk.",
-      "nextSteps": "Add local model inference, optional coaching handoff, pattern insights, and multi-session history while preserving privacy.",
-      "demoLink": "https://example.com/mother-load-agent",
+      "tags": ["Agentic", "Companion", "Safety"],
+      "oneLineProblem": "A quiet companion for the invisible load of early postpartum life.",
+      "problem": "The silent crisis of postpartum mental labor: in the first year postpartum, many mothers feel overwhelmed or not coping despite doing everything right. Existing tools optimize the baby or diagnose mental health, but do not help name the invisible emotional and cognitive load. A single prompt cannot safely deliver the empathy and guardrails required.",
+      "targetUser": "Mothers in the first postpartum year who want language and validation for what feels heavy, without judgment or medical framing.",
+      "solution": "A calm, journal-like companion that labels the emotional load using six grounded categories and returns a brief, validating response. The output avoids advice, avoids diagnosis, and focuses on making the user feel seen.",
+      "architecture": "Single-line agentic flow with three nodes: Safety Gatekeeper (binary high-risk scan with early exit), Taxonomy Classifier (maps input to one of six PRD categories), and Validation Writer (quiet, minimal, non-prescriptive response). Configuration lives in JSON brains (safety.json, classifier.json, writer.json) after prototyping in the Antigravity sidebar.",
+      "decisions": "Moved from AI as assistant to AI as companion; rejected single-prompt approaches due to task dilution; enforced strict guardrails (no advice, minimal word count, no diagnosis) to keep tone safe and soothing.",
+      "nextSteps": "Refine taxonomy grounding, expand scenario coverage, and validate the quiet-space UX with additional user sessions.",
+      "demoLink": "TBD",
       "narrationId": "project-motherload"
     },
     {
@@ -42,7 +42,6 @@
       "architecture": "Static HTML routes with JSON content, lightweight JS, and a narration stub.",
       "decisions": "Prioritized load speed and clarity over complex interactivity; no heavy frameworks.",
       "nextSteps": "Wire a licensed TTS provider and add case study visuals.",
-      "demoLink": "https://example.com/vibe-coded-portfolio",
       "narrationId": "project-vibe"
     }
   ]
