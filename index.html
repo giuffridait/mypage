@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Laura Barbosa | Portfolio</title>
+    <link rel="stylesheet" href="/assets/styles.css" />
+  </head>
+  <body>
+    <header class="site-header"></header>
+    <main>
+      <div class="container">
+        <section class="hero" id="hero"></section>
+      </div>
+    </main>
+    <footer class="footer"></footer>
+    <script type="module">
+      import { loadJSON, renderHeader, renderFooter } from "/scripts/site.js";
+
+      renderHeader("home");
+      renderFooter();
+
+      const profile = await loadJSON("/content/profile.json");
+      const hero = document.getElementById("hero");
+      hero.innerHTML = `
+        <h1>${profile.headline}</h1>
+        <p>${profile.name}</p>
+        <ul>
+          ${profile.outcomes.map((item) => `<li>${item}</li>`).join("")}
+        </ul>
+        <div class="button-row">
+          <a class="btn primary" href="${profile.ctaPrimary.href}">${profile.ctaPrimary.label}</a>
+        </div>
+      `;
+    </script>
+  </body>
+</html>

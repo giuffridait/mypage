@@ -1,0 +1,49 @@
+{
+  "projects": [
+    {
+      "id": "expenses-leave-calculator",
+      "title": "Policy-Driven Maternity Leave Calculator",
+      "status": "MVP",
+      "tags": ["Policy", "Calculator", "US States"],
+      "oneLineProblem": "State-by-state leave rules make income planning opaque and stressful.",
+      "problem": "Parents planning maternity leave struggle to estimate time off and income impact because US state rules vary, benefits include caps and eligibility constraints, and existing calculators are either generic or too complex.",
+      "targetUser": "Expecting parents in the US who want clear, deterministic estimates and a transparent explanation of what drives the gap.",
+      "solution": "A stateless calculator that resolves state policy defaults, applies caps, and returns a paid vs unpaid timeline, cashflow gap, assumptions, and next checks. Optional narration is feature-flagged and never changes numbers.",
+      "architecture": "Modular calculation pipeline: resolve scenario defaults, validate and apply caps, compute timeline and cashflow, then generate structured explanations. Policy configs live in a US-first directory with a generic fallback and one fully implemented state.",
+      "decisions": "Keep logic pure and testable in a domain layer; no accounts or persistence; LLM narration is optional and post-processed with number allowlists to prevent hallucinated figures.",
+      "nextSteps": "Ship US-GENERIC plus one real state policy, add unit tests for caps and timelines, and expand states via config-only additions.",
+      "demoLink": "https://leave-planner-beta.vercel.app",
+      "narrationId": "project-expenses-leave"
+    },
+    {
+      "id": "motherload-companion",
+      "title": "Mother Load Agent",
+      "status": "MVP",
+      "tags": ["Agentic", "Wellbeing", "Reflection"],
+      "oneLineProblem": "Language for the invisible load, without prescribing care.",
+      "problem": "Many mothers in the first year postpartum feel overwhelmed or depleted despite doing everything right. Existing tools focus on optimizing the baby or diagnosing mental health issues, but do not help mothers name the invisible emotional and cognitive load they are carrying. This leads to self-blame, decision fatigue, overconsumption of conflicting advice, and delayed support-seeking.",
+      "targetUser": "Mothers with babies aged 0–12 months, often first-time, with high self-expectations and limited local support who are comfortable reading short reflective prompts.",
+      "solution": "A guided reflection flow with 6–8 open-ended prompts that classifies a primary and secondary invisible load, then returns a validating, non-prescriptive insight with optional micro-steps and clear scope disclaimers.",
+      "architecture": "Agentic pipeline with Intake, Classifier, Writer, and Guardrail nodes. Intake checks for enough context; Classifier outputs primary/secondary load plus evidence; Writer drafts a calm insight; Guardrail enforces safety language and scope boundaries.",
+      "decisions": "Split classification and writing to reduce tone drift and make safety checks explicit; avoid diagnosis language and medical claims; keep usage anonymous with no logins to minimize data risk.",
+      "nextSteps": "Add local model inference, optional coaching handoff, pattern insights, and multi-session history while preserving privacy.",
+      "demoLink": "https://example.com/mother-load-agent",
+      "narrationId": "project-motherload"
+    },
+    {
+      "id": "vibe-coded-portfolio",
+      "title": "Vibe-Coded Portfolio Website",
+      "status": "Live",
+      "tags": ["Portfolio", "Editorial", "Static"],
+      "oneLineProblem": "A quiet portfolio that makes outcomes easy to scan.",
+      "problem": "Most personal sites bury the work under heavy visuals or vague language.",
+      "targetUser": "Teams and collaborators who want a fast, clear overview of real work.",
+      "solution": "A minimal, static-first portfolio with structured content and optional narration.",
+      "architecture": "Static HTML routes with JSON content, lightweight JS, and a narration stub.",
+      "decisions": "Prioritized load speed and clarity over complex interactivity; no heavy frameworks.",
+      "nextSteps": "Wire a licensed TTS provider and add case study visuals.",
+      "demoLink": "https://example.com/vibe-coded-portfolio",
+      "narrationId": "project-vibe"
+    }
+  ]
+}

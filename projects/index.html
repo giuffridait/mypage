@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Projects | Laura Barbosa</title>
+    <link rel="stylesheet" href="/assets/styles.css" />
+  </head>
+  <body>
+    <header class="site-header"></header>
+    <main>
+      <div class="container">
+        <h1 class="section-title">Projects</h1>
+        <div class="cards" id="project-cards"></div>
+      </div>
+    </main>
+    <footer class="footer"></footer>
+    <script type="module">
+      import { loadJSON, renderHeader, renderFooter, createTagList } from "/scripts/site.js";
+
+      renderHeader("projects");
+      renderFooter();
+
+      const data = await loadJSON("/content/projects.json");
+      const cards = document.getElementById("project-cards");
+      cards.innerHTML = data.projects
+        .map(
+          (project) => `
+            <a class="card" href="/projects/${project.id}/">
+              <div class="meta">
+                <span class="tag">${project.status}</span>
+              </div>
+              <h3>${project.title}</h3>
+              <p>${project.oneLineProblem}</p>
+              <div class="meta">
+                ${createTagList(project.tags)}
+              </div>
+            </a>
+          `
+        )
+        .join("");
+    </script>
+  </body>
+</html>

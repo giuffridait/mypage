@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Vibe-Coded Portfolio Website | Projects</title>
+    <link rel="stylesheet" href="/assets/styles.css" />
+  </head>
+  <body>
+    <header class="site-header"></header>
+    <main>
+      <div class="container">
+        <p class="notice"><a href="/projects/">← Back to projects</a></p>
+        <h1 class="section-title" id="project-title"></h1>
+        <div id="project-detail"></div>
+      </div>
+    </main>
+    <footer class="footer"></footer>
+    <script type="module">
+      import { renderProjectPage } from "/scripts/project-page.js";
+
+      renderProjectPage("vibe-coded-portfolio");
+    </script>
+  </body>
+</html>

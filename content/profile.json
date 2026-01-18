@@ -1,0 +1,41 @@
+{
+  "name": "Laura Barbosa",
+  "headline": "Product-minded builder crafting calm, useful software.",
+  "outcomes": [
+    "Reduce busywork with clear, dependable workflows",
+    "Ship MVPs that feel considered, not rushed",
+    "Balance speed with maintainable architecture",
+    "Turn fuzzy problems into testable decisions"
+  ],
+  "ctaPrimary": {
+    "label": "View Projects",
+    "href": "/projects/"
+  },
+  "ctaSecondary": {
+    "label": "Listen: 45s overview",
+    "narrationId": "home-overview"
+  },
+  "enjoyBuilding": [
+    "Pricing calculators with transparent logic",
+    "Internal tools that quietly save time",
+    "Design systems that age gracefully",
+    "Small experiments with big learning value"
+  ],
+  "craftProcess": [
+    "Name the real decision and its boundaries",
+    "Prototype the smallest thing that teaches us",
+    "Check it against real usage signals",
+    "Ship, learn, and make the next pass kinder"
+  ],
+  "currentlyExploring": [
+    "AI and agentic workflows (with guardrails and taste)"
+  ],
+  "listeningTo": [
+    "Shell Game"
+  ],
+  "values": [
+    "Clarity over cleverness",
+    "Respect for user attention",
+    "Honest, human tradeoffs"
+  ]
+}
