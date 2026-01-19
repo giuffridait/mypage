@@ -15,6 +15,16 @@
     "label": "Listen: 45s overview",
     "narrationId": "home-overview"
   },
+  "socials": [
+    {
+      "label": "LinkedIn",
+      "href": "https://www.linkedin.com/in/laura-barbosa-a33b9614/"
+    },
+    {
+      "label": "X",
+      "href": "https://x.com/laurbarbos"
+    }
+  ],
   "enjoyBuilding": [
     "Pricing calculators with transparent logic",
     "Internal tools that quietly save time",

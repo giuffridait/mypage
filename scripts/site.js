@@ -14,6 +14,8 @@ export function renderHeader(active) {
       <a href="/" ${active === "home" ? "aria-current=page" : ""}>Home</a>
       <a href="/projects/" ${active === "projects" ? "aria-current=page" : ""}>Projects</a>
       <a href="/personal/" ${active === "personal" ? "aria-current=page" : ""}>Personal</a>
+      <a href="https://www.linkedin.com/in/laura-barbosa-a33b9614/" target="_blank" rel="noreferrer">LinkedIn</a>
+      <a href="https://x.com/laurbarbos" target="_blank" rel="noreferrer">X</a>
       <a href="mailto:lauragiuffridabarbosa@gmail.com">Email me</a>
     </nav>
   `;

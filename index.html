@@ -22,6 +22,12 @@
 
       const profile = await loadJSON("/content/profile.json");
       const hero = document.getElementById("hero");
+      const socialButtons = (profile.socials || [])
+        .map(
+          (social) =>
+            `<a class="btn secondary" href="${social.href}" target="_blank" rel="noreferrer">${social.label}</a>`
+        )
+        .join("");
       hero.innerHTML = `
         <h1>${profile.headline}</h1>
         <p>${profile.name}</p>
@@ -30,6 +36,7 @@
         </ul>
         <div class="button-row">
           <a class="btn primary" href="${profile.ctaPrimary.href}">${profile.ctaPrimary.label}</a>
+          ${socialButtons}
         </div>
       `;
     </script>
