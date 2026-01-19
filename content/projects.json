@@ -27,7 +27,7 @@
       "architecture": "Single-line agentic flow with three nodes: Safety Gatekeeper (binary high-risk scan with early exit), Taxonomy Classifier (maps input to one of six PRD categories), and Validation Writer (quiet, minimal, non-prescriptive response). Configuration lives in JSON brains (safety.json, classifier.json, writer.json) after prototyping in the Antigravity sidebar.",
       "decisions": "Moved from AI as assistant to AI as companion; rejected single-prompt approaches due to task dilution; enforced strict guardrails (no advice, minimal word count, no diagnosis) to keep tone safe and soothing.",
       "nextSteps": "Refine taxonomy grounding, expand scenario coverage, and validate the quiet-space UX with additional user sessions.",
-      "demoLink": "TBD",
+      "demoLink": "https://motherloadagent.vercel.app/",
       "narrationId": "project-motherload"
     },
     {
