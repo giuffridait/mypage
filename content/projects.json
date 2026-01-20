@@ -8,7 +8,7 @@
       "oneLineProblem": "State-by-state leave rules make income planning opaque and stressful.",
       "problem": "Parents planning maternity leave struggle to estimate time off and income impact because US state rules vary, benefits include caps and eligibility constraints, and existing calculators are either generic or too complex.",
       "targetUser": "Expecting parents in the US who want clear, deterministic estimates and a transparent explanation of what drives the gap.",
-      "solution": "A stateless calculator that resolves state policy defaults, applies caps, and returns a paid vs unpaid timeline, cashflow gap, assumptions, and next checks. Optional narration is feature-flagged and never changes numbers.",
+      "solution": "A stateless calculator that resolves state policy defaults, applies caps, and returns a paid vs unpaid timeline, cashflow gap, assumptions, and next checks. The results are exportable to pdf. Optional narration is feature-flagged and never changes numbers.",
       "architecture": "Modular calculation pipeline: resolve scenario defaults, validate and apply caps, compute timeline and cashflow, then generate structured explanations. Policy configs live in a US-first directory with a generic fallback and one fully implemented state.",
       "decisions": "Keep logic pure and testable in a domain layer; no accounts or persistence; LLM narration is optional and post-processed with number allowlists to prevent hallucinated figures.",
       "nextSteps": "Ship US-GENERIC plus one real state policy, add unit tests for caps and timelines, and expand states via config-only additions.",
